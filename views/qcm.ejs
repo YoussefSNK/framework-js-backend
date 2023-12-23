@@ -1,0 +1,23 @@
+
+<%- include('header') -%>
+
+<%= qcm.name %>
+par <%= qcm.author %> <br><br>Thème: <%= qcm.theme %>
+<br>
+Pour un total de <%= qcm.nbpoints %> points
+<br>
+Questions:
+<ul>
+    <% qcm.listquestions.forEach(question => { %>
+        <li>
+            <%= question.question %>
+            <ul>
+                <% question.reponse.forEach(reponse => { %>
+                    <li><%= reponse %></li>
+                <% }); %>
+            </ul>
+        </li>
+    <% }); %>
+</ul>
+<a href="/qcms">Retour</a>
+<%- include('footer') -%>

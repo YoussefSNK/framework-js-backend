@@ -1,0 +1,25 @@
+
+<%- include('header') -%>
+
+<p>Mes QCMS disponibles</p>
+<ul>
+    <% for (let qcm of qcms) { %>
+        <li>
+            <a href="/qcms/<%= qcm.id %>">
+                <%= qcm.name %> (<%= qcm.theme %>) : <%= qcm.nbpoints %> points
+            </a>
+            <br>
+            <a href="/qcms/<%= qcm.id %>/newquestion">Ajouter une question</a>
+
+        </li>
+        <br>
+    <% } %>
+</ul>
+
+<a href="/qcms/new">
+    <button>Créer un QCM</button>
+</a>
+
+
+
+<%- include('footer') -%>

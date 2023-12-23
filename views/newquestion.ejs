@@ -1,0 +1,21 @@
+<%- include('header') -%>
+QCM : <%= qcm.name %> (<%= qcm.theme %>)
+
+
+<form action="/qcms/<%= qcm.id %>/newquestion" method="POST">
+  <div>
+    <label for="question">Question</label>
+    <input type="text" id="question" name="question" required>
+  </div>
+  <div>
+    <label for="reponse">Réponses [entre virgules]</label>
+    <input type="text" id="reponse" name="reponse" required>
+  </div>
+  <div>
+    <label for="nbpoints">Nombre de points</label>
+    <input type="number" id="nbpoints" name="nbpoints" required>
+  </div>
+  <button type="submit">Confirmer</button>
+</form>
+
+<%- include('footer') -%>
